@@ -1,7 +1,9 @@
-package com.tejas.weatherforecast;
+package com.tejas.weatherforecast.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.tejas.weatherforecast.R;
 
 public class WeatherForecastActivity extends AppCompatActivity {
 
