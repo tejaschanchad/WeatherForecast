@@ -48,9 +48,9 @@ public class WeatherForecastCardsAdapter extends RecyclerView.Adapter<WeatherFor
 
         tv_date_time.setText("Date/Time: " + mWeatherForecastDataSet.get(listPosition).getDtTxt());
 
-        tv_temp.setText("Temp (Min/Max): "
+        tv_temp.setText("Temp (Min|Max): "
                 + String.valueOf(mWeatherForecastDataSet.get(listPosition).getMain().getTempMin())
-                + "/" + String.valueOf(mWeatherForecastDataSet.get(listPosition).getMain().getTempMax())
+                + " | " + String.valueOf(mWeatherForecastDataSet.get(listPosition).getMain().getTempMax())
                 + " " + Constants.CELSIUS_UNICODE);
     }
 

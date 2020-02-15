@@ -2,6 +2,8 @@ package com.tejas.weatherforecast.application;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
 
 import com.tejas.weatherforecast.dependency_injection.component.DaggerWeatherForecastAppComponent;
 
@@ -12,6 +14,8 @@ import dagger.android.HasActivityInjector;
 
 public class WeatherForecastApp extends Application implements HasActivityInjector {
 
+    public static ConnectivityManager mConMgr;
+
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
@@ -19,6 +23,11 @@ public class WeatherForecastApp extends Application implements HasActivityInject
     public void onCreate() {
         super.onCreate();
         this.initDagger();
+
+        // Create ConnectivityManager Object....
+        if (mConMgr == null) {
+            mConMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
     }
 
     @Override

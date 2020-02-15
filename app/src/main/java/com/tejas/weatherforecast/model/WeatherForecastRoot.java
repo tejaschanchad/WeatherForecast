@@ -1,4 +1,3 @@
-
 package com.tejas.weatherforecast.model;
 
 import com.google.gson.annotations.Expose;
