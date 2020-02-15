@@ -19,9 +19,9 @@ public class WeatherForecastViewModel extends ViewModel {
     }
 
     public void initWeatherForecastData(String cityName) {
-        if (this.weatherForecast != null) {
+        /*if (this.weatherForecast != null) {
             return;
-        }
+        }*/
         weatherForecast = weatherForecastRepo.getWeatherForecast(cityName);
     }
 

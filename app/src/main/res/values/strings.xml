@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">WeatherForecast</string>
+    <string name="appbar_title">Weather Forecast</string>
+    <string name="txt_no_internet">Please Check Internet Connectivity</string>
+
+    <string-array name="cities_array">
+        <item>Select City...</item>
+        <item>Toronto</item>
+        <item>Washington</item>
+        <item>New York</item>
+        <item>London</item>
+        <item>Berlin</item>
+        <item>Paris</item>
+        <item>Bangalore</item>
+        <item>Mumbai</item>
+        <item>Singapore</item>
+        <item>Hong Kong</item>
+        <item>Seoul</item>
+        <item>Tokyo</item>
+    </string-array>
 </resources>

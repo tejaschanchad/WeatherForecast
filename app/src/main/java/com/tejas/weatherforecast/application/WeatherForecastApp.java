@@ -2,7 +2,6 @@ package com.tejas.weatherforecast.application;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 
 import com.tejas.weatherforecast.dependency_injection.component.DaggerWeatherForecastAppComponent;
 
@@ -16,13 +15,10 @@ public class WeatherForecastApp extends Application implements HasActivityInject
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
-    public static Context context;
-
     @Override
     public void onCreate() {
         super.onCreate();
         this.initDagger();
-        context = getApplicationContext();
     }
 
     @Override
@@ -30,7 +26,7 @@ public class WeatherForecastApp extends Application implements HasActivityInject
         return dispatchingAndroidInjector;
     }
 
-    private void initDagger(){
+    private void initDagger() {
         DaggerWeatherForecastAppComponent.builder().application(this).build().inject(this);
     }
 }

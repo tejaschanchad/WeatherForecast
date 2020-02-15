@@ -24,7 +24,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    WeatherForecastRepository provideUserRepository(WeatherForecastWebservice webservice, Executor executor) {
+    WeatherForecastRepository provideWeatherForecastRepository(WeatherForecastWebservice webservice, Executor executor) {
         return new WeatherForecastRepository(webservice, executor);
     }
 
@@ -44,7 +44,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    WeatherForecastRepository provideApiWebservice(Retrofit restAdapter) {
-        return restAdapter.create(WeatherForecastRepository.class);
+    WeatherForecastWebservice provideApiWebservice(Retrofit restAdapter) {
+        return restAdapter.create(WeatherForecastWebservice.class);
     }
 }

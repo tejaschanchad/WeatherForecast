@@ -36,8 +36,8 @@ public class WeatherForecastRepository {
                 @Override
                 public void onResponse(Call<WeatherForecastRoot> call, Response<WeatherForecastRoot> response) {
                     executor.execute(() -> {
-                        WeatherForecastRoot user = response.body();
-                        weatherForecastLiveData.postValue(user);
+                        WeatherForecastRoot weatherForecastRoot = response.body();
+                        weatherForecastLiveData.postValue(weatherForecastRoot);
                     });
                 }
 
