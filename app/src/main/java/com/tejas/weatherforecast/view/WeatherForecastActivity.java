@@ -16,8 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.tejas.weatherforecast.R;
-import com.tejas.weatherforecast.application.WeatherForecastApp;
 import com.tejas.weatherforecast.model.WeatherForecastRoot;
+import com.tejas.weatherforecast.utils.AppUtils;
 import com.tejas.weatherforecast.view.adapters.WeatherForecastCardsAdapter;
 import com.tejas.weatherforecast.view_models.WeatherForecastViewModel;
 
@@ -90,9 +90,7 @@ public class WeatherForecastActivity extends BaseActivity implements AdapterView
         if(position != 0) { // If position is zero then no need to call web-service
             String city = adapterView.getItemAtPosition(position).toString();
 
-            if (WeatherForecastApp.mConMgr.getActiveNetworkInfo() != null
-                    && WeatherForecastApp.mConMgr.getActiveNetworkInfo().isAvailable()
-                    && WeatherForecastApp.mConMgr.getActiveNetworkInfo().isConnected()) {
+            if (AppUtils.isInternetAvailable()) {
                 configureViewModel(city);
             } else {
                 alert(getResources().getString(R.string.txt_no_internet));
