@@ -36,7 +36,7 @@ public class RecyclerViewMatcher {
                     }
                 }
 
-                description.appendText("with id: " + idDescription);
+                description.appendText("id: " + idDescription);
             }
 
             public boolean matchesSafely(View view) {
